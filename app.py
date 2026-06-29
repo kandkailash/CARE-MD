@@ -1,5 +1,6 @@
 import os
 import streamlit as st
+import download_models
 from PIL import Image
 
 from caremd import CAREMD2
