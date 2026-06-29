@@ -17,6 +17,10 @@ os.makedirs(ROI_DIR, exist_ok=True)
 os.makedirs(MASK_DIR, exist_ok=True)
 os.makedirs(REPORT_DIR, exist_ok=True)
 
+REFERENCE_IMAGE_DIR = os.path.join(
+    BASE_DIR,
+    "reference_images_small"
+)
 ATTUNET_MODEL = os.path.join(
     MODEL_DIR,
     "best_attunet_ham10000.pth"
