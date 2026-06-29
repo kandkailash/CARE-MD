@@ -37,3 +37,7 @@ def ensure_reference_images():
         os.remove(zip_path)
 
     print("✓ CARE-MD reference images ready")
+
+    print("Reference folder:", REFERENCE_DIR)
+    print("Files extracted:", len(os.listdir(REFERENCE_DIR)))
+    print("First files:", os.listdir(REFERENCE_DIR)[:5])
