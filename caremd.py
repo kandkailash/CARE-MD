@@ -1085,13 +1085,27 @@ class CAREMD2:
             col = i % 5
         
             ax = fig.add_subplot(gs[1 + row, col])
-        
+
+
+
+            
+            print("="*60)
+            print("REFERENCE_IMAGE_DIR :", REFERENCE_IMAGE_DIR)
+            print("Image ID            :", ref["image_id"])
+            
             img_path = os.path.join(
                 REFERENCE_IMAGE_DIR,
                 ref["image_id"] + ".jpg"
             )
-        
+            
+            print("Image Path          :", img_path)
+            print("Exists?             :", os.path.exists(img_path))
+            print("="*60)
+            
             img = cv2.imread(img_path)
+
+
+            
         
             if img is not None:
         
