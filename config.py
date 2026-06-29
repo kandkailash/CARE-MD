@@ -31,3 +31,32 @@ MEMORY_BANK = os.path.join(
     MEMORY_DIR,
     "CARE_MEMORY_BANK_TRAIN.pkl"
 )
+# ==========================================================
+# CLASS NAMES
+# ==========================================================
+
+CLASS_NAMES = [
+    "akiec",
+    "bcc",
+    "bkl",
+    "df",
+    "mel",
+    "nv",
+    "vasc"
+]
+
+# ==========================================================
+# CONCEPT NAMES
+# ==========================================================
+
+CONCEPT_NAMES = [
+    "Asymmetry",
+    "Border",
+    "Color",
+    "Diameter",
+    "Compactness",
+    "Color Entropy",
+    "Latent-1",
+    "Latent-2",
+    "Latent-3"
+]
