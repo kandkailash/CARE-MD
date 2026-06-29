@@ -8,8 +8,11 @@ ZIP_FILE = "reference_images_small.zip"
 
 def ensure_reference_images():
 
-    # Already extracted
-    if os.path.isdir(REFERENCE_DIR):
+    # Already downloaded & extracted
+    if (
+        os.path.exists(REFERENCE_DIR)
+        and len(os.listdir(REFERENCE_DIR)) > 7000
+    ):
         print("✓ Reference images already available")
         return
 
@@ -22,9 +25,15 @@ def ensure_reference_images():
         local_dir="."
     )
 
-    print("Extracting images...")
+    print("Extracting reference images...")
 
     with zipfile.ZipFile(zip_path, "r") as zip_ref:
         zip_ref.extractall(".")
 
-    print("✓ Reference images ready")
+    print("✓ Reference images extracted")
+
+    # Optional: delete ZIP after extraction
+    if os.path.exists(zip_path):
+        os.remove(zip_path)
+
+    print("✓ CARE-MD reference images ready")
