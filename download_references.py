@@ -8,36 +8,26 @@ ZIP_FILE = "reference_images_small.zip"
 
 def ensure_reference_images():
 
-    # Already downloaded & extracted
-    if (
-        os.path.exists(REFERENCE_DIR)
-        and len(os.listdir(REFERENCE_DIR)) > 7000
-    ):
+    if os.path.exists(REFERENCE_DIR):
         print("✓ Reference images already available")
         return
+
+    os.makedirs(REFERENCE_DIR, exist_ok=True)
 
     print("Downloading reference images...")
 
     zip_path = hf_hub_download(
         repo_id="kailashkandpal/CARE-MD-Reference-Images",
         repo_type="dataset",
-        filename=ZIP_FILE,
-        local_dir="."
+        filename=ZIP_FILE
     )
 
-    print("Extracting reference images...")
+    print("ZIP Path:", zip_path)
+
+    print("Extracting...")
 
     with zipfile.ZipFile(zip_path, "r") as zip_ref:
-        zip_ref.extractall(".")
+        zip_ref.extractall(REFERENCE_DIR)
 
-    print("✓ Reference images extracted")
-
-    # Optional: delete ZIP after extraction
-    if os.path.exists(zip_path):
-        os.remove(zip_path)
-
-    print("✓ CARE-MD reference images ready")
-
-    print("Reference folder:", REFERENCE_DIR)
-    print("Files extracted:", len(os.listdir(REFERENCE_DIR)))
-    print("First files:", os.listdir(REFERENCE_DIR)[:5])
+    print("Files:", len(os.listdir(REFERENCE_DIR)))
+    print("Done.")
