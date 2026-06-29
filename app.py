@@ -2,8 +2,14 @@ import os
 import streamlit as st
 import download_models
 from PIL import Image
+from download_models import ensure_models
+from download_references import ensure_reference_images
+
+ensure_models()
+ensure_reference_images()
 
 from caremd import CAREMD2
+
 
 # ==========================================================
 # PAGE CONFIG
