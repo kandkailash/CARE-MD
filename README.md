@@ -1,135 +1,66 @@
-# CARE-MD
+<p align="center">
+  <img src="assets/logo.png" width="220">
+</p>
 
-## Clinical Reasoning-Aligned Framework for Self-eXplainable Medical Diagnosis
+<h1 align="center">CARE-MD</h1>
 
-CARE-MD is a multi-phase explainable AI framework for skin lesion diagnosis. The framework combines lesion localization, concept-based reasoning, case-based retrieval, and evidence-driven clinical reporting to provide transparent and interpretable predictions.
+<p align="center">
+Clinical Reasoning-Aligned Framework for Self-Explainable Medical Diagnosis
+</p>
 
----
+<p align="center">
 
-# Features
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red)
+![Streamlit](https://img.shields.io/badge/Streamlit-WebApp-ff4b4b)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-- Automatic Lesion Localization (Attention U-Net)
-- Clinical Concept Prediction (Hybrid CBM)
-- Episodic Memory Retrieval
-- Similar Case Retrieval
-- Evidence-based Diagnosis
-- Clinical AI Explanation
-- Automated Clinical Report Generation
-
----
-
-# Framework
-
-Input Image
-
-↓
-
-Phase-1
-ROI Localization
-(Attention U-Net)
-
-↓
-
-Phase-2
-Concept Reasoning
-(Hybrid Concept Bottleneck Model)
-
-↓
-
-Phase-3
-CARE-Reference
-(Episodic Memory Retrieval)
-
-↓
-
-Phase-4
-Clinical Decision Report
+</p>
 
 ---
 
-# Repository Structure
+# Framework Architecture
 
-```
-CARE-MD/
-│
-├── app.py
-├── caremd.py
-├── config.py
-├── requirements.txt
-├── README.md
-│
-├── models/
-├── memory/
-├── reference_images/
-├── uploads/
-├── outputs/
-├── assets/
-└── examples/
-```
+<p align="center">
+<img src="assets/architecture.png" width="1000">
+</p>
 
 ---
 
-# Installation
+# Overview
 
-Clone the repository
+CARE-MD (Clinical Reasoning-Aligned Framework for Self-Explainable Medical Diagnosis) is an explainable AI framework for dermoscopic skin lesion diagnosis. The framework integrates lesion localization, concept reasoning, episodic memory retrieval, and evidence-based validation to produce transparent and clinically interpretable diagnostic reports.
 
-```bash
-git clone https://github.com/YOUR_USERNAME/CARE-MD.git
-```
+---
 
-Install dependencies
+# Key Features
 
-```bash
-pip install -r requirements.txt
-```
-
-Run
-
-```bash
-streamlit run app.py
-```
+* Automatic ROI Localization using Attention U-Net
+* Clinical Concept Reasoning using Hybrid Concept Bottleneck Model
+* CARE-Reference Episodic Memory Retrieval
+* Top-K Similar Clinical Case Retrieval
+* Evidence-based Clinical Decision Support
+* Automated Clinical Report Generation
+* Explainable AI for Medical Diagnosis
 
 ---
 
 # Pipeline
 
-1. Upload Image
-2. ROI Extraction
-3. Concept Prediction
-4. Similar Case Retrieval
-5. Evidence Validation
-6. Clinical Report Generation
+Input Image
 
----
+↓
 
-# Output
+Phase-1 : ROI Localization
 
-The generated report contains
+↓
 
-- Original Image
-- ROI
-- Diagnosis Summary
-- Clinical Concepts
-- Similar Clinical References
-- Evidence Summary
-- Clinical AI Explanation
+Phase-2 : Concept Reasoning
 
----
+↓
 
-# Models
+Phase-3 : CARE-Reference Retrieval
 
-The trained model weights are **not included** in this repository because of GitHub file size limitations.
+↓
 
-Download the pretrained models and place them inside the **models/** directory.
-
----
-
-# Citation
-
-If you use CARE-MD in your research, please cite the corresponding publication.
-
----
-
-# License
-
-MIT License
+Phase-4 : Clinical Decision Report
