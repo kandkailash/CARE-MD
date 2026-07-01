@@ -863,8 +863,8 @@ class CAREMD2:
         )
     
         fig = plt.figure(
-            figsize=(22,16),
-            facecolor="white"
+            figsize=(24,18),
+            facecolor="#F8F9FA"
         )
     
         gs = fig.add_gridspec(
