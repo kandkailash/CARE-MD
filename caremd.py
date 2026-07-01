@@ -887,15 +887,45 @@ class CAREMD2:
     
         )
 
-        fig.suptitle(
-    
-            "CARE-MD Clinical Decision Report",
-    
-            fontsize=22,
-    
-            fontweight="bold"
-    
+        header = fig.add_subplot(gs[0, :])
+
+        header.axis("off")
+
+        header.text(
+            0.01,
+            0.75,
+            "CARE-MD",
+            fontsize=28,
+            fontweight="bold",
+            color="#003366"
         )
+
+        header.text(
+            0.01,
+            0.30,
+            "Clinical Reasoning-Aligned Framework for Self-eXplainable AI in Medical Diagnosis",
+            fontsize=12,
+            color="gray"
+        )
+
+        header.text(
+            0.99,
+            0.75,
+            "Version 1.1",
+            ha="right",
+            fontsize=12,
+            fontweight="bold"
+        )
+        
+        header.text(
+            0.99,
+            0.30,
+            "Generated Automatically",
+            ha="right",
+            fontsize=10,
+            color="gray"
+        )
+
 
         ax = fig.add_subplot(gs[0,0])
     
@@ -1164,7 +1194,7 @@ class CAREMD2:
                 )
             )
 
-        # ==========================================================
+# ==========================================================
 # FINAL EXPLANATION
 # ==========================================================
 
